@@ -1,0 +1,54 @@
+.card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 400px;
+    height: 300px;
+  }
+
+.image-ph{
+      height: 150px;
+      max-width: 100%;
+  }
+
+.heading, .description{
+      margin-top: 10px !important;
+      height: 30px !important;
+      width: 100%;
+  }
+
+  .action{
+      width: 50% !important;
+      margin-top: 10px !important;
+      height: 30px !important;
+  }
+
+.animated-bg {
+    background-image: linear-gradient(
+      to right,
+      #f6f7f8 0%,
+      #edeef1 10%,
+      #f6f7f8 20%,
+      #f6f7f8 100%
+    );
+    background-size: 200% 100%;
+    animation: bgPos 1s linear infinite;
+  }
+  
+  .animated-bg-text {
+    border-radius: 50px;
+    display: inline-block;
+    margin: 0;
+    height: 10px;
+    width: 100%;
+  }
+  
+  @keyframes bgPos {
+    0% {
+      background-position: 50% 0;
+    }
+  
+    100% {
+      background-position: -150% 0;
+    }
+  }

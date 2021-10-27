@@ -1,0 +1,100 @@
+input[type='text']{
+    width:70%;
+    height:60px;
+    margin-top:20px;
+    margin-bottom:20px;
+    padding-bottom:-80px;
+    border:none;
+    border-bottom:3px solid #fe6888;
+    overflow:auto;
+    position:relative;
+  }
+  
+  
+  
+  
+  
+  input[type='text']:active:focus,
+  input[type='text']:focus,
+  input[type='text']:hover{
+    outline : none;
+    font-size:20px;
+  }
+  
+  
+  
+  input[type='text']:focus::-webkit-input-placeholder,
+  input[type='text']:active:focus::-webkit-input-placeholder
+  {
+    font-size:12px;
+    display:block;
+    -webkit-transform:translateY(-20px);
+    transform:translateY(-20px);
+  }
+  
+  ::-webkit-placeholder{
+    font-size:14px;
+    color:#b7b7b7;
+    text-transform:capitalize;
+    -webkit-transform:translateY(0px);
+    transform:translateY(0px);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; 
+  }
+  
+  ::placeholder{
+    font-size:14px;
+    color:#b7b7b7;
+    text-transform:capitalize;
+    -webkit-transform:translateY(0px);
+    transform:translateY(0px);
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out; 
+  }
+  
+  .loginBtn{
+    background:linear-gradient(45deg, #fe6888, #ff8e53);
+    color: #fff;
+    padding:5px 10px;
+    text-decoration:none;
+    font-size:large;
+    cursor: pointer;
+  }
+
+  /* Loading dots styles */
+@keyframes opacity {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes opacity {
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+#loading {
+	text-align: center;
+}
+
+#loading span:not(:last-child) {
+	margin-right: 5px;
+}
+
+#loading span {
+animation-name: opacity;
+animation-duration: 1s;
+animation-iteration-count: infinite;
+	
+	-moz-animation-name: opacity;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: infinite;
+}
+
+#loading span:nth-child(2) {
+	-webkit-animation-delay: 100ms;
+	-moz-animation-delay: 100ms;
+}
+
+#loading span:nth-child(3) {
+	-webkit-animation-delay: 300ms;
+	-moz-animation-delay: 300ms;
+}

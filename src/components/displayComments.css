@@ -1,0 +1,12 @@
+.comment{
+    background: #fff;
+    box-shadow: 0 10px 10px -4px #ddd;
+    padding: 10px 5px;
+    margin: 5px 0;
+    width: 70%;
+}
+
+.comment img{
+    border-radius: 50%;
+    height: 30px;
+}

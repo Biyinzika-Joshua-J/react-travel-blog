@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import PostsPage from './pages/postsPage';
+import PostDetailPage from './pages/postDetailPage'
+import Layout from './components/layout';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import { getAuth } from "firebase/auth";
+import { useEffect } from 'react';
+import Authentication from './context/context'
+import {useContext} from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let authStatus = useContext(Authentication)
+  useEffect(()=>{
+      getAuth().onAuthStateChanged(user=>{
+        if (user){
+          authStatus.setLogin();
+          authStatus.handleUsername(user.displayName);
+          authStatus.handleImage(user.photoURL)
+        }
+      })
+  }, [])
+
+  return (<Layout>
+        <BrowserRouter>
+            <Switch>
+              <Route exact path='/'>
+                <PostsPage/>
+              </Route>
+
+              <Route exact path='/post/:id'>
+                <PostDetailPage/>
+              </Route>
+            </Switch>
+        </BrowserRouter>
+
+      </Layout>);
 }
 
 export default App;
